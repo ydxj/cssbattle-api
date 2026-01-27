@@ -49,6 +49,8 @@ GET /api/player/[username]
 GET /api/player/zerhouni
 ```
 
+![Example](image.png)
+
 **Response:**
 
 ```json
