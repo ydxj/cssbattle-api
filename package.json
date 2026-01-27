@@ -1,17 +1,27 @@
 {
   "name": "cssbattle-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
+  "description": "A serverless API to scrape CSSBattle player profiles",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vercel dev",
+    "deploy": "vercel"
   },
-  "keywords": [],
+  "keywords": [
+    "cssbattle",
+    "api",
+    "scraper",
+    "vercel"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sparticuz/chromium": "^143.0.4",
     "cheerio": "^1.1.0",
-    "express": "^5.2.1",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "puppeteer-core": "^24.36.1"
+  },
+  "devDependencies": {
+    "vercel": "^37.0.0"
   }
 }
