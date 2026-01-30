@@ -1,22 +1,33 @@
-# cssbattle-api
+# 🎯 CSSBattle API
 
-A serverless API that scrapes CSSBattle player profiles using **Puppeteer** (browser automation) and returns clean JSON data. Fully compatible with Vercel.
+A powerful, serverless API that scrapes [CSSBattle](https://cssbattle.dev) player profiles using **Puppeteer** (browser automation) and returns clean JSON data. Built with Node.js and fully compatible with Vercel for seamless deployment.
 
-## Features
+**Perfect for:** Developers building tools, dashboards, or apps that need CSSBattle player data integration.
 
-- ✅ **Puppeteer-based scraping** (handles JavaScript-rendered content)
-- ✅ Serverless Node.js API (Vercel-compatible)
-- ✅ Complete player statistics
-- ✅ Input validation & error handling
-- ✅ Cache headers (1 hour)
-- ✅ CORS enabled
-- ✅ Production-ready
+## ✨ Features
+
+- 🚀 **Puppeteer-based web scraping** - Handles JavaScript-rendered content effortlessly
+- ⚡ **Serverless Node.js API** - Deploy instantly with Vercel (no server required)
+- 📊 **Comprehensive player statistics** - Streaks, rankings, battle stats, daily targets & more
+- ✔️ **Input validation & error handling** - Robust error responses with detailed messages
+- 💾 **Smart caching** - Cache headers (1 hour) to reduce load and improve performance
+- 🔄 **CORS enabled** - Use from any frontend application
+- 🏆 **Production-ready** - Battle-tested and deployed with reliability in mind
 
 ## Quick Start
 
-### Install Dependencies
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/ydxj/cssbattle-api.git
+cd cssbattle-api
+
+# Install dependencies
 npm install
 ```
 
@@ -34,24 +45,25 @@ Server will be available at `http://localhost:3000`
 npm run deploy
 ```
 
-Or connect your GitHub repo to Vercel for automatic deployments.
+Or connect your GitHub repository to Vercel for automatic deployments on every push.
 
-## API Endpoint
+## 📡 API Usage
 
 ### Get Player Profile
 
+Fetch complete player statistics from CSSBattle with a single API call.
+
+**Request:**
 ```
 GET /api/player/[username]
 ```
 
 **Example:**
-```
-GET /api/player/zerhouni
+```bash
+curl https://cssbattle-api.vercel.app/api/player/zerhouni
 ```
 
-![Example](image.png)
-
-**Response:**
+**Response (200 OK):**
 
 ```json
 {
@@ -105,35 +117,67 @@ GET /api/player/zerhouni
 }
 ```
 
-## How It Works
+## 🔧 How It Works
 
-1. **Browser Rendering**: Uses Puppeteer + Chromium to render the CSSBattle profile page
-2. **Data Extraction**: JavaScript DOM queries extract all player statistics
-3. **Caching**: Responses cached for 1 hour using Cache-Control headers
-4. **Validation**: Username format validated before processing
+1. **Browser Rendering** - Uses Puppeteer Core + Chromium to render JavaScript-heavy pages
+2. **Smart Data Extraction** - DOM queries pull all player statistics accurately
+3. **Intelligent Caching** - Responses cached for 1 hour via Cache-Control headers
+4. **Input Validation** - Username format validated to prevent errors
+5. **Error Handling** - Graceful fallbacks with detailed error messages
 
-## Tech Stack
+## 📦 Tech Stack
 
-- **Node.js** (ESM)
-- **Puppeteer Core** + **@sparticuz/chromium** (headless browser)
-- **Vercel** (serverless platform)
+| Technology | Purpose |
+|-----------|---------|
+| **Node.js (ESM)** | JavaScript runtime |
+| **Puppeteer Core** | Headless browser automation |
+| **@sparticuz/chromium** | Lightweight Chromium for serverless |
+| **Vercel** | Serverless deployment platform |
 
-## Performance Notes
+## ⚡ Performance & Optimization
 
-- First request: 5-10 seconds (Chromium cold start)
-- Cached requests: < 100ms
-- Function timeout: 15 seconds
-- Cache duration: 1 hour (3600 seconds)
+| Metric | Value |
+|--------|-------|
+| First request | 5-10 seconds (cold start) |
+| Cached requests | < 100ms |
+| Function timeout | 15 seconds |
+| Cache duration | 1 hour (3600s) |
 
-## Deployment
+The API optimizes performance through aggressive caching and leverages Vercel's global CDN for fast response times worldwide.
 
-This API is configured for Vercel deployment. The vercel.json file includes:
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Push to GitHub**
+   ```bash
+   git push origin main
+   ```
+
+2. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Deploy with one click
+
+3. **Automatic Deployments**
+   - Every push triggers automatic deployment
+   - Preview URLs for PRs
+
+The `vercel.json` file includes optimized configuration for:
 - Function timeout settings
-- CORS headers
+- CORS headers for cross-origin requests
 - Output directory configuration
 
-Simply push to GitHub and connect to Vercel for automatic deployments.
+## 🤝 Contributing
 
-## License
+We welcome contributions! Whether it's:
+- 🐛 Bug reports
+- ✨ Feature requests
+- 📝 Documentation improvements
+- 💻 Code contributions
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## 📄 License
 
 ISC

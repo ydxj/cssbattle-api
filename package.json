@@ -2,21 +2,36 @@
   "name": "cssbattle-api",
   "version": "1.0.0",
   "type": "module",
-  "description": "A serverless API to scrape CSSBattle player profiles",
-  "scripts": {
-    "start": "vercel dev",
-    "deploy": "vercel"
-  },
+  "description": "A powerful serverless API to scrape CSSBattle player profiles using Puppeteer and Node.js. Get comprehensive player statistics including streaks, rankings, and battle performance data. Fully compatible with Vercel.",
   "keywords": [
     "cssbattle",
     "css-battle",
     "css",
     "api",
     "scraper",
-    "vercel"
+    "puppeteer",
+    "vercel",
+    "serverless",
+    "node.js",
+    "player-profiles",
+    "statistics",
+    "web-scraping"
   ],
-  "author": "",
+  "author": "Zerhouni Omar",
   "license": "ISC",
+  "homepage": "https://github.com/ydxj/cssbattle-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ydxj/cssbattle-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ydxj/cssbattle-api/issues"
+  },
+  "scripts": {
+    "start": "vercel dev",
+    "dev": "vercel dev",
+    "deploy": "vercel"
+  },
   "dependencies": {
     "@sparticuz/chromium": "^143.0.4",
     "cheerio": "^1.1.0",
@@ -25,5 +40,8 @@
   },
   "devDependencies": {
     "vercel": "^37.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
