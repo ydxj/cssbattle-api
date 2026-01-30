@@ -53,11 +53,18 @@ export default async function handler(req, res) {
       const data = {
         username: window.location.pathname.split('/')[2],
         profileUrl: window.location.href,
+        profilePicture: null,
         streaks: { current: null, longest: null },
         battleStats: { globalRank: null, targetsPlayed: null, totalScore: null },
         dailyTargets: { targetsPlayed: null, avgMatch: null, avgCharacters: null },
         versus: { rating: null, gamesPlayed: null, wins: null }
       };
+
+      // Extract profile picture
+      const profileImg = document.querySelector('.user-details__avatar');
+      if (profileImg && profileImg.src) {
+        data.profilePicture = profileImg.src;
+      }
 
       const extractNumber = (text) => {
         if (!text) return null;
